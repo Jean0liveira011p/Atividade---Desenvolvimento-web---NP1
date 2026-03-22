@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfólio do Grupo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        nav {
+            background-color: #1a1a2e;
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-lista {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-lista li a {
+            color: #e0e0e0;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .nav-lista li a:hover {
+            background-color: #16213e;
+            color: #ffffff;
+        }
+
+        .hero {
+            background-color: #16213e;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-conteudo {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #cccccc;
+        }
+
+        .hero-img {
+            width: 420px;
+            border-radius: 10px;
+            border: 4px solid #0f3460;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #0f3460;
+            color: #ffffff;
+            padding: 12px 30px;
+            border: 2px solid #e94560;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #e94560;
+            color: #ffffff;
+        }
+
+        .secao {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .titulo-secao {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #e94560;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .texto {
+            font-size: 1rem;
+            color: #555555;
+            max-width: 700px;
+            margin: 15px auto 0 auto;
+        }
+
+        .equipe-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .membro {
+            width: 280px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .membro:hover {
+            border-color: #0f3460;
+        }
+
+        .foto-equipe {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #dee2e6;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .membro h3 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .membro p {
+            font-size: 0.85rem;
+            color: #666666;
+            text-align: left;
+            padding: 0 5px;
+        }
+
+        .projetos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .projeto-card {
+            width: 450px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .img-projeto {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 5px solid #dee2e6;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .img-projeto:hover {
+            border-color: #0f3460;
+        }
+
+        .projeto-card h3 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .projeto-card p {
+            font-size: 0.9rem;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .link-projeto {
+            display: inline-block;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .link-projeto:hover {
+            background-color: #e94560;
+        }
+
+        .contato {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contato-lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contato-lista li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #cccccc;
+        }
+
+        .contato-lista li a {
+            color: #e94560;
+        }
+
+        .contato-lista li a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-lista {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero-img {
+                width: 320px;
+            }
+
+            .titulo-secao {
+                font-size: 1.5rem;
+            }
+
+            .membro {
+                width: 90%;
+            }
+
+            .projeto-card {
+                width: 90%;
+            }
+
+            .foto-equipe {
+                width: 100px;
+                height: 100px;
+            }
+
+            .img-projeto {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+
+            .hero-img {
+                width: 260px;
+            }
+
+            .membro {
+                width: 95%;
+                padding: 20px 10px;
+            }
+
+            .projeto-card {
+                width: 95%;
+            }
+
+            .contato-lista li {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#" class="nav-logo">PORTFÓLIO</a>
+
+            <ul class="nav-lista">
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-conteudo">
+
+            <h1>Portfólio do Grupo</h1>
+
+            <p>
+                Apresentação do grupo e dos projetos desenvolvidos durante o curso.
+            </p>
+
+            <a href="#sobre" class="botao">Saiba mais</a>
+
+            <br>
+            <img src="img/equipe.jpeg" alt="Foto da equipe" class="hero-img">
+
+        </div>
+    </section>
+
+    <section id="sobre" class="secao">
+
+        <h2 class="titulo-secao">Sobre</h2>
+
+        <p class="texto">
+            Somos um grupo do curso de Análise e Desenvolvimento de Sistemas da UNIP e estamos criando esse site para servir como um portfólio onde colocaremos nossos projetos.
+        </p>
+
+    </section>
+
+    <section id="equipe" class="secao">
+
+        <h2 class="titulo-secao">Equipe</h2>
+
+        <div class="equipe-grid">
+
+            <div class="membro">
+                <img src="img/adriel.jpg" alt="Foto do Adriel" class="foto-equipe">
+                <h3>Adriel</h3>
+                <p>
+                    Tenho facilidade para trabalhar em equipe, sou participativo, compreensivo e paciente. Possuo conhecimento intermediário em Python e já tive contato com C++ e lógica de programação em Ladder. Atualmente estou aprendendo desenvolvimento web com HTML, CSS e Banco de Dados.
+                </p>
+            </div>
+
+            <div class="membro">
+                <img src="img/amanda.jpg" alt="Foto da Amanda" class="foto-equipe">
+                <h3>Amanda</h3>
+                <p>
+                    Sou dedicada, organizada e tenho facilidade em trabalhar em equipe. Contribuo com pesquisa, análise de informações e organização das atividades do projeto, buscando sempre responsabilidade e bons resultados.
+                </p>
+            </div>
+
+            <div class="membro">
+                <img src="img/ana.jpg" alt="Foto da Ana" class="foto-equipe">
+                <h3>Ana</h3>
+                <p>
+                    Sou responsável, organizada e dedicada. Tenho interesse em desenvolvimento de sistemas e possuo conhecimentos em lógica de programação. Gosto muito de trabalhar em equipe, ajudando meus colegas nos projetos.
+                </p>
+            </div>
+
+            <div class="membro">
+                <img src="img/jean.jpg" alt="Foto do Jean" class="foto-equipe">
+                <h3>Jean</h3>
+                <p>
+                    Tenho facilidade para trabalhar em grupo, compartilhando ideias e ajudando na resolução de problemas. Em processo de aprendizagem na área de front-end, com conhecimentos em HTML, CSS e Bootstrap para criar interfaces responsivas.
+                </p>
+            </div>
+
+            <div class="membro">
+                <img src="img/marcos.jpeg" alt="Foto do Marcos" class="foto-equipe">
+                <h3>Marcos</h3>
+                <p>
+                    Profissional com grande interesse em tecnologia, com conhecimentos em HTML e CSS para criação de páginas web. Possuo habilidades em lógica de programação e experiência em desenvolvimento com Python.
+                </p>
+            </div>
+
+            <div class="membro">
+                <img src="img/pedro.jpg" alt="Foto do Pedro" class="foto-equipe">
+                <h3>Pedro</h3>
+                <p>
+                    Sou organizado, dedicado e comunicativo. Tenho interesse em desenvolvimento de software e possuo conhecimentos em lógica de programação. Gosto muito de trabalhar em equipe e conversar sobre os projetos.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projetos" class="secao">
+
+        <h2 class="titulo-secao">Projetos</h2>
+
+        <div class="projetos-container">
+
+            <div class="projeto-card">
+
+                <img src="img/doacao.jpg" alt="Projeto de Doação" class="img-projeto">
+
+                <h3>Projeto 1 - Sistema de Doações</h3>
+
+                <p>
+                    Desenvolvemos um sistema de apoio para uma empresa responsável por receber e realizar doações de produtos. O sistema organiza cadastro de doadores, produtos e beneficiários e controla entradas e saídas de doações.
+                </p>
+
+                <a href="https://github.com/Jean0liveira011p/PIM-PY.git" target="_blank" class="link-projeto">
+                    Ver projeto
+                </a>
+
+            </div>
+
+            <div class="projeto-card">
+
+                <img src="img/estoque.png" alt="Projeto de Estoque" class="img-projeto">
+
+                <h3>Projeto 2 - Controle de Estoque</h3>
+
+                <p>
+                    Projeto desenvolvido para uma empresa, com foco em solucionar problemas relacionados ao controle de estoque e ao gerenciamento de produtos, prezando por um melhor controle e maior agilidade nos processos.
+                </p>
+
+                <a href="https://github.com/marcosdiasss/PIM-FACULDADE-" target="_blank" class="link-projeto">
+                    Ver projeto
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contato" class="contato">
+
+        <h2>Contato</h2>
+
+        <ul class="contato-lista">
+            <li>Adriel - <a href="mailto:adrielthiago62@gmail.com">adrielthiago62@gmail.com</a></li>
+            <li>Amanda - <a href="mailto:amandaalmeidaribeiro156@gmail.com">amandaalmeidaribeiro156@gmail.com</a></li>
+            <li>Ana - <a href="mailto:anasaaalmeida@gmail.com">anasaaalmeida@gmail.com</a></li>
+            <li>Jean - <a href="mailto:jeanoliveira011p@gmail.com">jeanoliveira011p@gmail.com</a></li>
+            <li>Marcos - <a href="mailto:marcosdiastxtp@gmail.com">marcosdiastxtp@gmail.com</a></li>
+            <li>Pedro - <a href="mailto:pedrobelem4010@gmail.com">pedrobelem4010@gmail.com</a></li>
+        </ul>
+
+    </section>
+
+</body>
+</html>
